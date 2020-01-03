@@ -45,3 +45,5 @@ print(myStr.partition("chou"))
 print(myStr.split(" "))
 print(myStr.startswith("adi"))
 print(myStr.strip())#removes spaces from the beginning and the end of a string
+
+print(input("Enter a string:").strip(' ').replace(' ',''))
