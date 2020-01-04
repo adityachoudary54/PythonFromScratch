@@ -5,10 +5,14 @@ def myPartition(s):
         return s.partition('+')
     elif '-' in s:
         return s.partition('-')
+    elif '**' in s:
+        return s.partition('**')    
     elif '*' in s:
         return s.partition('*')
     elif '/' in s:
         return s.partition('/')
+    elif '%' in s:
+        return s.partition('%')    
     else:
         return -1,-1,-1
 a,operator,b=myPartition(input("Enter the expression to be evaluated:"))
@@ -31,4 +35,11 @@ elif operator=='/':
     else:
         print(a//b)
 else:
-    print(a-b)
+    if operator == '-':
+        print(a-b)
+    elif operator == '%':
+        print(a%b)
+    elif operator == '**':
+        print(a**b)
+    else:
+        print("Wrong operator")
