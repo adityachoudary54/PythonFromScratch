@@ -14,15 +14,22 @@ class Employee:
         # params=string.split("-")
         # return cls(params[0],params[1],params[2])
         return cls(*string.split("-"))
-    
-class Programmer(Employee):
-    def __init__(self, name, salary, role,lang):
-        # super().__init__(name, salary, role)
+
+class Player:
+    no_of_games=4
+    def __init__(self,name,game):
+        # super().__init__()
+        self.game=game
         self.name=name
-        self.salary=salary
-        self.role=role
-        self.lang=lang
-    def printProgrammerDetails(self):
-        return f"Programmer name is:{self.name}.\nSalary is:{self.salary}.\nRole is:{self.role}.\nLanguage is:{self.lang}"
-yoyo=Programmer.from_str("yoyo-56000-Doctor-{}".format(['C++','Python','Java']))
-print(yoyo.printProgrammerDetails())
+    def printDetails(self):
+        return f"The name is {self.name}, game is {self.game}"
+
+class coolProgrammer(Employee,Player):
+    language='C++'
+    def printLanguage(self):
+        print(self.language)
+
+shubham=Player("shubham",['rugby','cricket'])
+karan=coolProgrammer("Karan",8999,'CoolProgrammer')
+print(karan.printDetails())
+karan.printLanguage()
