@@ -1,5 +1,6 @@
 def funArgs(*args):
     print(args[0])
+    print(args)
     print(type(args))
 lst=["harry",'aloo','pyaz','sabzi','tinde']
 funArgs(*lst)
